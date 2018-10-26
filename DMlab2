@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main()
+{     
+    int n=0, m=0,i=0,j=0;
+    bool b=true;  
+    printf("Amount elements of array A\n");
+    n=GetInt();    
+    printf("Enter elements of array A\n");
+    int A[n];
+    do{
+        A[i]=GetChar();
+        i++;
+    }
+    while(i<n);    
+    printf("{ ");    
+    for (i=0; i<n; i++){
+        printf("%c ",  A[i]);       
+    }    
+    printf("}\n");    
+    printf("Amount elements of array B\n");
+    m=GetInt();
+    printf("Enter elements of array B\n");
+    int B[m];
+    do{
+        B[j]=GetChar();
+        j++;
+    }
+    while(j<m);    
+    printf("{ ");    
+    for (j=0; j<m; j++){
+        printf("%c ", B[j]);
+    }    
+    printf("}\n"); 
+    printf("Difference of two arrays:\n");    
+    printf("{ ");            
+    for(i=0; i<n; i++)
+    {b=true;
+        for(j=0; j<m; j++){
+           if(A[i]==B[j]){
+              b=false;          
+            }                          
+        }
+        if(b){                
+               printf("%c ",A[i]);                            
+        } 
+    } 
+    printf("}\n");         
+    char U[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};         
+    printf("Addition to array A:\n"); 
+    printf("{ ");                
+    for(int k=0; k<26; k++)
+    {b=true;
+        for(i=0; i<n; i++){
+           if(U[k]==A[i]){
+              b=false;
+          
+            }                          
+        }
+        if(b){                
+              printf("%c ",U[k]);                            
+        }          
+    }
+    printf("}\n");    
+    printf("Addition to array B:\n"); 
+    printf("{ ");                
+    for(int k=0; k<26; k++)
+    {b=true;
+        for(j=0; j<m; j++){
+           if(U[k]==B[j]){
+              b=false;
+          
+            }                          
+        }
+        if(b){                
+               printf("%c ",U[k]);                            
+        }          
+    }
+    printf("}\n");                        
